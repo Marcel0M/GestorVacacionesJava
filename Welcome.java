@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Bienvenida extends JFrame implements ActionListener{
+public class Welcome extends JFrame implements ActionListener{
     private JTextField textfield1;
     private JLabel label1, label2, label3, label4;
     private JButton button1;//=boton1
     
-    public Bienvenida(){
+    public Welcome(){
         setLayout(null);
         setTitle("Bienvenido");
         getContentPane().setBackground(new Color(16,0,79));
@@ -21,7 +21,7 @@ public class Bienvenida extends JFrame implements ActionListener{
         add(label1);
 
         label2 = new JLabel("Sistema Gestor de Vaciones");
-        label2.setBounds(60,135,300,30);
+        label2.setBounds(60,140,300,30);
         label2.setFont(new Font("Andale Mono", 3, 18));
         label2.setForeground(new Color(255,255,255));
         add(label2);
@@ -61,7 +61,7 @@ public class Bienvenida extends JFrame implements ActionListener{
     }
 
     public static void main(String args[]){
-        Bienvenida ventanawelcome = new Bienvenida();//= ventanabienvenida
+        Welcome ventanawelcome = new Welcome();//= ventanabienvenida
         ventanawelcome.setBounds(0,0,380,450);
         ventanawelcome.setVisible(true);
         ventanawelcome.setResizable(false);
