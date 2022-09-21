@@ -11,6 +11,7 @@ public class Menu extends JFrame implements ActionListener{
     private JComboBox comboDepto, comboLabor;
     private JScrollPane scrollPane1;
     private JTextArea textArea1;
+    String nameAdmin = "";
     
     
     public Menu(){
@@ -18,6 +19,8 @@ public class Menu extends JFrame implements ActionListener{
         setTitle("Menu Principal");
         getContentPane().setBackground(new Color(16,0,79));
         setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
+        Welcome windowWelcome = new Welcome();
+        nameAdmin = windowWelcome.text;
 
         mb = new JMenuBar();
         mb.setBackground(new Color(16,0,79));
@@ -93,7 +96,7 @@ public class Menu extends JFrame implements ActionListener{
         labelLogo.setBounds(5, 5, 330, 100);
         add(labelLogo);
 
-        labelWelcome = new JLabel("Bienvenido");
+        labelWelcome = new JLabel("Bienvenido " + nameAdmin);
         labelWelcome.setBounds(350, 30, 300, 50);
         labelWelcome.setFont(new Font("Andale Mono", 1, 32));
         labelWelcome.setForeground(new Color(255,255,255));
@@ -175,9 +178,9 @@ public class Menu extends JFrame implements ActionListener{
         comboLabor.setForeground(new Color(255,0,0));
         add(comboLabor);
         comboLabor.addItem("");
-        comboLabor.addItem("1 años de servicio");
-        comboLabor.addItem("2 a 6 años de servicio");
-        comboLabor.addItem("7 o mas años de servico");
+        comboLabor.addItem("1 aï¿½o de servicio");
+        comboLabor.addItem("2 a 6 aï¿½os de servicio");
+        comboLabor.addItem("7 o mas aï¿½os de servico");
 
 
         labelResult = new JLabel("Resultado del Calculo: ");
@@ -197,7 +200,7 @@ public class Menu extends JFrame implements ActionListener{
         add(scrollPane1);
 
 
-        labelFooter = new JLabel("©2022 LATAM Airlines Chile | Todos los derechos reservados");
+        labelFooter = new JLabel("ï¿½2022 LATAM Airlines Chile | Todos los derechos reservados");
         labelFooter.setBounds(135,445,500,30);
         labelFooter.setFont(new Font("Andale Mono", 1, 12));
         labelFooter.setForeground(new Color(255,255,255));
@@ -207,25 +210,100 @@ public class Menu extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent ev) {
         if (ev.getSource() == myCalculate){
+            String name = txtName.getText();
+            String L1 = txtLastName1.getText();
+            String L2 = txtLastName2.getText();
+            String Depto = comboDepto.getSelectedItem().toString();
+            String Labor = comboLabor.getSelectedItem().toString();//antiguedad
+
+            if(name.equals("") || L1.equals("") || L2.equals("") || Depto.equals("") || Labor.equals("")){
+                JOptionPane.showMessageDialog(null, "Debes completar todos los campos.");
+            } else {
+                if(Depto.equals("Atencion al Pasajero")){
+                    if(Labor.equals("1 aï¿½o de servicio")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 15 dias de vacaciones.");
+                    }
+                    if(Labor.equals("2 a 6 aï¿½os de servicio")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 17 dias de vacaciones.");
+                    }
+                    if(Labor.equals("7 o mas aï¿½os de servico")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 20 dias de vacaciones.");
+                    }
+                    
+                }
+                if(Depto.equals("Rampa")){
+                    if(Labor.equals("1 aï¿½o de servicio")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 16 dias de vacaciones.");
+                    }
+                    if(Labor.equals("2 a 6 aï¿½os de servicio")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 18 dias de vacaciones.");
+                    }
+                    if(Labor.equals("7 o mas aï¿½os de servico")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 22 dias de vacaciones.");
+                    }
+                    
+                }
+                if(Depto.equals("Gerencia")){
+                    if(Labor.equals("1 aï¿½o de servicio")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 17 dias de vacaciones.");
+                    }
+                    if(Labor.equals("2 a 6 aï¿½os de servicio")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 20 dias de vacaciones.");
+                    }
+                    if(Labor.equals("7 o mas aï¿½os de servico")){
+                        textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
+                                          "\n quien trabaja en el area de " + Depto + " con " + Labor + 
+                                          "\n recibe 25 dias de vacaciones.");
+                    }
+                    
+                }
+            }
 
         }
         if (ev.getSource() == myRed){
-
+            getContentPane().setBackground(new Color(255,0,0));
         }
         if (ev.getSource() == myBlack){
-
+            getContentPane().setBackground(new Color(0,0,0));
         }
         if (ev.getSource() == myPurple){
-
+            getContentPane().setBackground(new Color(51,0,51));
         }
         if (ev.getSource() == myNew){
-
+            txtName.setText("");
+            txtLastName1.setText("");
+            txtLastName2.setText("");
+            comboDepto.setSelectedIndex(0);
+            comboLabor.setSelectedIndex(0);
+            textArea1.setText("\n Aqui aparace el resultado del calculo de las vacaiones. ");
         }
         if (ev.getSource() == myExit){
-
+            Welcome windowWelcome = new Welcome();//= ventanabienvenida
+            windowWelcome.setBounds(0,0,380,450);
+            windowWelcome.setVisible(true);
+            windowWelcome.setResizable(false);
+            windowWelcome.setLocationRelativeTo(null);
+            this.setVisible(false);
         }
         if (ev.getSource() == myCreator){
-
+            JOptionPane.showConfirmDialog(null, "Desarrollado por Marcelo Morales \n"+
+                                                                         "  https://github.com/Marcel0M");
         }
 
     }

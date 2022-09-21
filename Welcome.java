@@ -8,6 +8,7 @@ public class Welcome extends JFrame implements ActionListener{
     private JTextField textfield1;
     private JLabel label1, label2, label3, label4;
     private JButton button1;//=boton1
+    public static String text = "";
     
     public Welcome(){
         setLayout(null);
@@ -32,7 +33,7 @@ public class Welcome extends JFrame implements ActionListener{
         label3.setForeground(new Color(255,255,255));
         add(label3);
 
-        label4 = new JLabel("©2022 LATAM Airlines Chile");
+        label4 = new JLabel("ï¿½2022 LATAM Airlines Chile");
         label4.setBounds(100,375,300,30);
         label4.setFont(new Font("Andale Mono", 1, 12));
         label4.setForeground(new Color(255,255,255));
@@ -56,15 +57,25 @@ public class Welcome extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent ev){
         if(ev.getSource() == button1){
-
+            text = textfield1.getText().trim();
+            if(text.equals("")){
+                JOptionPane.showMessageDialog(null, "Debes inresar tu nombre");
+            } else{
+                Terms windowTerms = new Terms();//= Licencia
+                windowTerms.setBounds(0,0,640,400);
+                windowTerms.setVisible(true);
+                windowTerms.setResizable(false);
+                windowTerms.setLocationRelativeTo(null);
+                this.setVisible(false);
+            }
         }
     }
 
     public static void main(String args[]){
-        Welcome ventanawelcome = new Welcome();//= ventanabienvenida
-        ventanawelcome.setBounds(0,0,380,450);
-        ventanawelcome.setVisible(true);
-        ventanawelcome.setResizable(false);
-        ventanawelcome.setLocationRelativeTo(null);
+        Welcome windowWelcome = new Welcome();//= ventanabienvenida
+        windowWelcome.setBounds(0,0,380,450);
+        windowWelcome.setVisible(true);
+        windowWelcome.setResizable(false);
+        windowWelcome.setLocationRelativeTo(null);
     }
 }
