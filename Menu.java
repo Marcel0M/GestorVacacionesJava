@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class Menu extends JFrame implements ActionListener{
     private JMenuBar mb;
     private JMenu menuOptions, menuCalculate, menuAbout, menuWallpaper;
-    private JMenuItem myCalculate, myRed, myBlack, myPurple, myCreator, myExit, myNew;
+    private JMenuItem myCalculate, myLatam, myBlack, myPurple, myCreator, myExit, myNew;
     private JLabel labelLogo, labelWelcome, labelTitle, labelName, labelLastName1, labelLastName2, labelDepto, labelLabor, labelResult, labelFooter;
     private JTextField txtName, txtLastName1, txtLastName2;
     private JComboBox comboDepto, comboLabor;
@@ -55,11 +55,11 @@ public class Menu extends JFrame implements ActionListener{
         menuCalculate.add(myCalculate);
         myCalculate.addActionListener(this);
 
-        myRed = new JMenuItem("Rojo");
-        myRed.setFont(new Font("Andale Mono", 1, 14));
-        myRed.setForeground(new Color(255,0,0));
-        menuWallpaper.add(myRed);
-        myRed.addActionListener(this);
+        myLatam = new JMenuItem("Latam");
+        myLatam.setFont(new Font("Andale Mono", 1, 14));
+        myLatam.setForeground(new Color(255,0,0));
+        menuWallpaper.add(myLatam);
+        myLatam.addActionListener(this);
 
         myBlack = new JMenuItem("Oscuro");
         myBlack.setFont(new Font("Andale Mono", 1, 14));
@@ -178,9 +178,9 @@ public class Menu extends JFrame implements ActionListener{
         comboLabor.setForeground(new Color(255,0,0));
         add(comboLabor);
         comboLabor.addItem("");
-        comboLabor.addItem("1 a�o de servicio");
-        comboLabor.addItem("2 a 6 a�os de servicio");
-        comboLabor.addItem("7 o mas a�os de servico");
+        comboLabor.addItem("1 a?o de servicio");
+        comboLabor.addItem("2 a 6 a?os de servicio");
+        comboLabor.addItem("7 o mas a?os de servico");
 
 
         labelResult = new JLabel("Resultado del Calculo: ");
@@ -200,7 +200,7 @@ public class Menu extends JFrame implements ActionListener{
         add(scrollPane1);
 
 
-        labelFooter = new JLabel("�2022 LATAM Airlines Chile | Todos los derechos reservados");
+        labelFooter = new JLabel("?2022 LATAM Airlines Chile | Todos los derechos reservados");
         labelFooter.setBounds(135,445,500,30);
         labelFooter.setFont(new Font("Andale Mono", 1, 12));
         labelFooter.setForeground(new Color(255,255,255));
@@ -220,17 +220,17 @@ public class Menu extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Debes completar todos los campos.");
             } else {
                 if(Depto.equals("Atencion al Pasajero")){
-                    if(Labor.equals("1 a�o de servicio")){
+                    if(Labor.equals("1 a?o de servicio")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 15 dias de vacaciones.");
                     }
-                    if(Labor.equals("2 a 6 a�os de servicio")){
+                    if(Labor.equals("2 a 6 a?os de servicio")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 17 dias de vacaciones.");
                     }
-                    if(Labor.equals("7 o mas a�os de servico")){
+                    if(Labor.equals("7 o mas a?os de servico")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 20 dias de vacaciones.");
@@ -238,17 +238,17 @@ public class Menu extends JFrame implements ActionListener{
                     
                 }
                 if(Depto.equals("Rampa")){
-                    if(Labor.equals("1 a�o de servicio")){
+                    if(Labor.equals("1 a?o de servicio")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 16 dias de vacaciones.");
                     }
-                    if(Labor.equals("2 a 6 a�os de servicio")){
+                    if(Labor.equals("2 a 6 a?os de servicio")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 18 dias de vacaciones.");
                     }
-                    if(Labor.equals("7 o mas a�os de servico")){
+                    if(Labor.equals("7 o mas a?os de servico")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 22 dias de vacaciones.");
@@ -256,17 +256,17 @@ public class Menu extends JFrame implements ActionListener{
                     
                 }
                 if(Depto.equals("Gerencia")){
-                    if(Labor.equals("1 a�o de servicio")){
+                    if(Labor.equals("1 a?o de servicio")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 17 dias de vacaciones.");
                     }
-                    if(Labor.equals("2 a 6 a�os de servicio")){
+                    if(Labor.equals("2 a 6 a?os de servicio")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 20 dias de vacaciones.");
                     }
-                    if(Labor.equals("7 o mas a�os de servico")){
+                    if(Labor.equals("7 o mas a?os de servico")){
                         textArea1.setText("\n  El trabajador " + name + " " + L1 + " " + L2 + 
                                           "\n quien trabaja en el area de " + Depto + " con " + Labor + 
                                           "\n recibe 25 dias de vacaciones.");
@@ -276,8 +276,8 @@ public class Menu extends JFrame implements ActionListener{
             }
 
         }
-        if (ev.getSource() == myRed){
-            getContentPane().setBackground(new Color(255,0,0));
+        if (ev.getSource() == myLatam){
+            getContentPane().setBackground(new Color(16,0,79));
         }
         if (ev.getSource() == myBlack){
             getContentPane().setBackground(new Color(0,0,0));
