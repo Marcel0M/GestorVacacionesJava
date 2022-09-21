@@ -16,7 +16,7 @@ public class Terms extends JFrame implements ActionListener, ChangeListener{
         setTitle("Licencia de uso");
         setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
 
-        label1 = new JLabel("TÃ‰RMINOS Y CONDICIONES");
+        label1 = new JLabel("TÉRMINOS Y CONDICIONES");
         label1.setBounds(215,5,200,30);
         label1.setFont(new Font("Andale Mono", 1, 14));
         label1.setForeground(new Color(0,0,0));
@@ -25,7 +25,7 @@ public class Terms extends JFrame implements ActionListener, ChangeListener{
         textarea1 = new JTextArea();
         textarea1.setEditable(false);
         textarea1.setFont(new Font("Andale Mono", 0, 9));
-        textarea1.setText("\n\n          TÃ©rminos y Condiciones");
+        textarea1.setText("\n\n          Términos y Condiciones");
         scrollpane1 = new JScrollPane(textarea1);
         scrollpane1.setBounds(10,40,575,200);
         add(scrollpane1);
