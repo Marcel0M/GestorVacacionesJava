@@ -27,8 +27,22 @@ public class Terms extends JFrame implements ActionListener, ChangeListener{
 
         textarea1 = new JTextArea();
         textarea1.setEditable(false);
-        textarea1.setFont(new Font("Andale Mono", 0, 9));
-        textarea1.setText("\n\nTerminos y Condiciones");
+        textarea1.setFont(new Font("Andale Mono", 0, 12));
+        textarea1.setText("\n\nTerminos y Condiciones" + 
+        "\n" +
+        "\n El presente documento establece los Términos y Condiciones de Uso," +
+        "\n (en adelante los Términos y Condiciones) mediante los cuales se regirá" +
+        "\n el uso de la aplicación de escritorio: generadorVacaciones, (en adelante la Aplicación)," +
+        "\n la cual es operada por Marcelo Morales, entidad constituida y válidamente existente bajo" +
+        "\n las leyes de la República de Chile, destinada a la facilitación para los usuarios que" +
+        "\n deseen instalar o instalen la aplicación de escritorio (en adelante los usuarios)." +
+        "\n" +
+        "\n El usuario se compromete a leer los Términos y Condiciones aquí establecidos y los" +
+        "\n disponibles y regulados, previamente a la descarga de la Aplicación. Por tanto, por" +
+        "\n el hecho de instalar la misma se entiende que el Usuario cuenta con el conocimiento integral" +
+        "\n de este documento y del contenido en la página Web referida y , que, consecuentemente, acepta" +
+        "\n la totalidad de sus estipulaciones. Si el usuario no está de acuerdo con estos Términos y" + 
+        "\n Condiciones de Uso, deberá abstenerse de descargar la Aplicación.");
         scrollpane1 = new JScrollPane(textarea1);
         scrollpane1.setBounds(10,40,575,200);
         add(scrollpane1);
