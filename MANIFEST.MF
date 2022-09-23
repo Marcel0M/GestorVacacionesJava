@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Marcelo Morales
+Main-Class: Welcome
+X-COMMENT: generadorVacaciones
